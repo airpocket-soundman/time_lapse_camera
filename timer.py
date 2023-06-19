@@ -5,6 +5,7 @@ import os
 
 
 image_size_list = [[320,240],[640,480],[800,600],[1024,768],[1280,960],[1600,1200],[2048,1536]]
+display_image_size = [640,480]
 image_size = 5
 temp_folder_path = "temp/"
 file_number = 0
@@ -31,12 +32,12 @@ def save_image(image, file_name):
 def scheduler(arg1, args2):
     print(time.time())
     ret, frame = capture.read()
-    cv2.imshow('image', frame)
+    display_image = cv2.resize(frame, (display_image_size[0], display_image_size[1]))
+    cv2.imshow('image', display_image)
     file_name = temp_folder_path + str(file_number).zfill(6) + ".jpg"
     save_image(frame, file_name)
     get_next_file_number()
     key = cv2.waitKey(1)
-
 
 def main_func():
     create_folder_if_not_exists(temp_folder_path)
