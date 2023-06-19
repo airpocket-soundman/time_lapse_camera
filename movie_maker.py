@@ -16,7 +16,7 @@ def create_video_from_jpg(folder_path, output_path, fps):
     
     # JPGファイルを読み込んで動画に書き込む
     for file_name in file_names:
-        print(file_names,"/",len(file_names))
+        print(file_name, "/",len(file_names))
         file_path = os.path.join(folder_path, file_name)
         image = cv2.imread(file_path)
         video_writer.write(image)
