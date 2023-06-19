@@ -1,0 +1,5 @@
+{
+    "interval_second"           :   1,
+    "temp_data_folder_path"     :   "temp/",
+    "movie_data_folder_path"    :   "data/"
+}
